@@ -10,7 +10,7 @@ const Home = ({user}) => {
         <div>
             <h1>Welcome home</h1>
             { user ?
-            <button disabled={user === null} onClick={() => auth.signOut()}>Sign out</button>
+            <button className="btn btn-warning" disabled={user === null} onClick={() => auth.signOut()}>Sign out</button>
             
             : <p>Please <Link to="/"> sign in </Link> To Add or Delete tasks</p>}
            <TaskForm user={user} />

@@ -16,7 +16,7 @@ export default function Task({ task, handleRemove,user }) {
           <span className="header">{title}</span>
           
 
-             <button
+             {user ? <button
               href="#"
               className="btn-danger"
               onClick={(e) => {
@@ -25,7 +25,7 @@ export default function Task({ task, handleRemove,user }) {
               disabled={user === null} 
             >
               Remove
-            </button> 
+            </button> : null} 
           </div>
         
       </Card.Body>
