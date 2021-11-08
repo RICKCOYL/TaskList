@@ -38,7 +38,7 @@ function TaskForm({ createBook, user }) {
   return (
     <div>
       <h3 className="App">Add New Task</h3>
-      <Form onSubmit={handleSubmit} className="">
+      <Form onSubmit={handleSubmit} className="d-flex justify-content-center">
 
      { user ? <div>
           <input type="input" disabled={user === null}  className="title-input" name="title" id="title" placeholder="enter book name" value={values.title} onChange={handleChange} />

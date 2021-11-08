@@ -32,7 +32,7 @@ console.log(user)
   return (
     <BrowserRouter>
     <div className="App">
-      <Nav />
+      <Nav user={user}/>
      <Routes>    
       <Route path="/signup" element={<Signup user={user} />} />
       <Route path="/" element={<Signin user={user} />} />

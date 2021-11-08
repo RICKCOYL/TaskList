@@ -11,10 +11,10 @@ export default function Task({ task, handleRemove,user }) {
 
   return (
     <Card className="container card mb-3">
-      <Card.Body className="d-flex flex-row justify-content-between align-items-center">
+      <Card.Body className="d-flex flex flex-sm-column justify-content-between align-items-center">
         <div className="d-flex ixed-width">
           <span className="header">{title}</span>
-          <div className="d-flex flex-row  align-items-center">
+          
 
              <button
               href="#"
@@ -27,7 +27,7 @@ export default function Task({ task, handleRemove,user }) {
               Remove
             </button> 
           </div>
-        </div> 
+        
       </Card.Body>
     </Card>
   );
