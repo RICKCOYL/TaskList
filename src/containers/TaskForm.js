@@ -36,8 +36,8 @@ function TaskForm({ createBook, user }) {
   };
 
   return (
-    <div className="form-container container">
-      <h3 className="mt-4 mb-3">Add New Task</h3>
+    <div>
+      <h3 className="App">Add New Task</h3>
       <Form onSubmit={handleSubmit} className="">
 
      { user ? <div>

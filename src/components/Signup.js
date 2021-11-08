@@ -26,7 +26,7 @@ const SignUp = () => {
                 <input ref={emailRef} type="email" />
                 <input ref={passwordRef} type="password" />
                 <button onClick={signUp}>Sign Up </button>
-                <h6>Not yet register? <Link to="/" className="signin__link">Sign in</Link></h6>
+                <h6>ALready have an account? <Link to="/" className="signin__link">Sign in</Link></h6>
             </form>
         </div>
     )

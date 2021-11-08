@@ -39,12 +39,6 @@ code {
     'Courier New',
     monospace;
 }
-
-img {
-  height: 65px;
-  width: 65px;
-}
-
 span.category {
   font-weight: 700;
   font-style: normal;
@@ -109,9 +103,6 @@ button.update {
   color: #fff;
 }
 
-.fixed-width {
-  width: 30%;
-}
 
 .filter-container {
   margin: 0 auto;
@@ -133,36 +124,11 @@ button.update {
   border-image-slice: 1;
 }
 
-.Update-progress {
-  width: 143px;
-  height: 18px;
-  font-size: 13px;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 0.5px;
-  text-align: center;
-  color: var(--white);
-}
 
-nav.nav-bar {
-  width: 1400px;
-  height: 95px;
-  margin: 0 0 38px;
-  padding: 23px 99px 27px 100px;
-  background-color: var(--white);
-  display: flex;
-  align-items: center;
-}
 
 h1 {
   margin-right: 50px;
   color: #0290ff;
-}
-
-.nav-books {
-  margin-right: 10px;
 }
 
 .title-input {
@@ -202,15 +168,6 @@ div.selectbox {
   margin-right: 5.5rem;
 }
 
-div.form-container {
-  width: 1200px;
-  margin: 0 auto;
-  border-top: 1px solid #e8e8e8;
-  padding: 20px 0;
-  margin-top: 2rem;
-  padding-right: 2rem;
-}
-
 div.addbook-input {
   flex: 1 1;
   padding-right: 20px;
@@ -242,6 +199,7 @@ margin-left: 10px;
 }
 
 nav {
+  width: 100%;
   display: flex;
   background-color: #0290ff;
   color: #fff;
@@ -255,3 +213,4 @@ nav a {
   font-weight: 500;
   margin: 0 20px;
 }
+
