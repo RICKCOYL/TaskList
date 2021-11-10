@@ -3,15 +3,16 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Task from '../components/Task';
-import {removeBook} from '../actions/index';
+import {removeTask} from '../actions/index';
 
 function TasksList({ tasks,user}) {
 
   const Tasks = useSelector(state => state.Tasks)
+  const state = useSelector(state => console.log(state))
   const dispatch = useDispatch();
   const handleRemoveTask = (e, book) => {
     e.preventDefault();
-   dispatch( removeBook(book.id));
+   dispatch( removeTask(book.id));
   };
 
   return (
@@ -34,5 +35,5 @@ TasksList.defaultProps = {
 
 TasksList.propTypes = {
   tasks: PropTypes.oneOfType([PropTypes.array]),
-  removeBook: PropTypes.func,
+  removeTask: PropTypes.func,
 };

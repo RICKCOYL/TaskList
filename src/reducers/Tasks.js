@@ -1,4 +1,4 @@
-import { CREATE_BOOK, REMOVE_BOOK } from '../components/Actions';
+import { CREATE_TASK, REMOVE_TASK } from '../components/Actions';
 
 const initialState = [
   {
@@ -18,9 +18,9 @@ const initialState = [
 const Tasks = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case CREATE_BOOK:
+    case CREATE_TASK:
       return [...state, payload];
-    case REMOVE_BOOK:
+    case REMOVE_TASK:
       return state.filter((Book) => Book.id !== payload);
     default:
       return state;

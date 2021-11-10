@@ -1,58 +1,34 @@
-import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { createBook } from '../actions/index';
+import React, {useState} from 'react'
+import {useDispatch} from 'react-redux'
+import {createTask} from '../actions/index'
 
-function TaskForm({ createBook, user }) {
-  const [values, setValues] = useState({
-    id: '',
-    title: '',
-  });
-
-  const [disableButton, setDisableButton] = useState(true)
-
-  const handleChange = (e) => {
-    setValues((values) => ({
-      ...values,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
+const TaskForm = () => {
+  const [task, setTask] = useState({
+    id: null,
+    title: "",
+  })
+  console.log(task)
+  const dispatch = useDispatch()
+  const handleChange = () => {
+   dispatch(createTask(task))
+  }
+ 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const { title} = values;
-
-    createBook({
-      id: Math.floor(Math.random() * 1111).toString(),
-      title,
-    });
-
-    setValues({
-      id: '',
-      title: '',
-    });
-  };
+    e.preventDefault()
+    handleChange()
+    setTask('')
+  }
 
   return (
     <div>
-      <h3 className="App">Add New Task</h3>
-      <Form onSubmit={handleSubmit} className="d-flex justify-content-center">
-
-     { user ? <div>
-          <input type="input" disabled={user === null}  className="title-input" name="title" id="title" placeholder="enter book name" value={values.title} onChange={handleChange} />
-       
-        
-          <Button className="Submit" type="submit" disabled={user === null} >Submit</Button>
-        </div> : null}
-      </Form>
+    <form onSubmit={handleSubmit} className="d-flex justify-content-center my-5 input-group">
+      <input type="text" value={task.title} onChange={e => setTask({ 
+        id: Math.floor(Math.random() * 1111).toString(),
+        title: e.target.value })} />
+      <button type="submit" className="btn btn-primary">Add</button>
+      </form>
     </div>
-  );
+  )
 }
 
-TaskForm.propTypes = {
-  createBook: PropTypes.func.isRequired,
-};
-
-export default connect(null, { createBook })(TaskForm);
+export default TaskForm

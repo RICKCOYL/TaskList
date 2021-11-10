@@ -1,15 +1,15 @@
-import { CREATE_BOOK, REMOVE_BOOK} from '../components/Actions';
+import { CREATE_TASK, REMOVE_TASK} from '../components/Actions';
 
-const createBook = (book) => ({
-  type: CREATE_BOOK,
+const createTask = (book) => ({
+  type: CREATE_TASK,
   payload: book,
 });
 
-const removeBook = (id) => ({
-  type: REMOVE_BOOK,
+const removeTask = (id) => ({
+  type: REMOVE_TASK,
   payload: id,
 });
 
 
 
-export { createBook, removeBook };
+export { createTask, removeTask };

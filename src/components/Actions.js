@@ -1,2 +1,2 @@
-export const CREATE_BOOK = 'CREATE_BOOK';
-export const REMOVE_BOOK = 'REMOVE_BOOK';
+export const CREATE_TASK = 'CREATE_TASK';
+export const REMOVE_TASK = 'REMOVE_TASK';
