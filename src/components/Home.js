@@ -30,7 +30,7 @@ const Home = ({users}) => {
             <button disabled={ loading || !currentUser } onClick={handleLogout} className="btn btn-warning">Log Out</button>
             
             : <p>Please <Link to="/"> sign in </Link> To Add or Delete tasks</p>}
-           <TaskForm user={currentUser} />
+           <TaskForm loading={loading} user={currentUser} />
             <TasksList user={currentUser} />
         </div>
     )

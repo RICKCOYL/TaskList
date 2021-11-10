@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux'
 import {createTask} from '../actions/index'
 import { useAuth  } from '../firebase';
 
-const TaskForm = () => {
+const TaskForm = ({loading}) => {
    const currentUser = useAuth();
   const [task, setTask] = useState({
     id: null,
@@ -23,12 +23,13 @@ const TaskForm = () => {
 
   return (
     <div>
-    <form onSubmit={handleSubmit} className="d-flex justify-content-center my-5 input-group">
-      <input disabled={  currentUser } type="text" value={task.title} onChange={e => setTask({ 
+
+    {currentUser ? <form onSubmit={handleSubmit} className="d-flex justify-content-center my-5 input-group">
+      <input disabled={ loading || currentUser } type="text" value={task.title} onChange={e => setTask({ 
         id: Math.floor(Math.random() * 1111).toString(),
         title: e.target.value })} />
-      <button disabled={  currentUser } type="submit" className="btn btn-primary">Add</button>
-      </form>
+      <button disabled={ loading || currentUser } type="submit" className="btn btn-primary">Add</button>
+      </form> : null}
     </div>
   )
 }
