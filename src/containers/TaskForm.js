@@ -25,10 +25,10 @@ const TaskForm = ({loading}) => {
     <div>
 
     {currentUser ? <form onSubmit={handleSubmit} className="d-flex justify-content-center my-5 input-group">
-      <input disabled={ loading || currentUser } type="text" value={task.title} onChange={e => setTask({ 
+      <input type="text" value={task.title} onChange={e => setTask({ 
         id: Math.floor(Math.random() * 1111).toString(),
         title: e.target.value })} />
-      <button disabled={ loading || currentUser } type="submit" className="btn btn-primary">Add</button>
+      <button type="submit" className="btn btn-primary">Add</button>
       </form> : null}
     </div>
   )
