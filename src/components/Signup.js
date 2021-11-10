@@ -27,8 +27,8 @@ const SignUp = () => {
                 <h1>Sign Up</h1>
                 <input ref={emailRef} type="email" />
                 <input ref={passwordRef} type="password" />
-                <button disabled={ loading || currentUser } onClick={handleSignup}>Sign Up</button>
-                <h6>ALready have an account? <Link to="/" className="signin__link">Sign in</Link></h6>
+                <button disabled={ loading || currentUser } onClick={handleSignup}>{loading ? <span>Please Wait...</span> : <span> Sign UP</span>}</button>
+                <h6>ALready have an account? <Link to="/" className="signin__link">Login</Link></h6>
             </form>
         </div>
     )

@@ -15,21 +15,22 @@ const Signin = ({user}) => {
         setLoading(true);
         try {
         await login(emailRef.current.value, passwordRef.current.value);
+        navigate('/home')
         } catch {
         alert("Error!");
         }
         setLoading(false);
-        navigate('/home')
+        
   }
    
  
     return (
         <div className="signin">
             <form action="">
-                <h1>Sign in</h1>
+                <h1>Log in</h1>
                 <input ref={emailRef} type="email" />
                 <input ref={passwordRef} type="password" />
-                <button disabled={ loading || currentUser } onClick={handleLogin}>Log In</button>
+                <button disabled={ loading || currentUser } onClick={handleLogin}>{loading ? <span>Please Wait...</span> : <span> Login</span>}</button>
                 <h6>Not yet register? <Link to="/signup" className="signin__link">Sign up</Link></h6>
             </form>
         </div>
